@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9b3571e-22be-46f5-a0f7-12e08ca0fc73" name="Changes" comment="Initial commit: &quot;api&quot; app created">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e9b3571e-22be-46f5-a0f7-12e08ca0fc73" name="Changes" comment="added .gitignore file to hide .venv variables">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1705559437857</updated>
-      <workItem from="1705559464565" duration="432000" />
+      <workItem from="1705559464565" duration="497000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: &quot;api&quot; app created">
       <option name="closed" value="true" />
@@ -95,7 +95,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705559861882</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added .gitignore file to hide .venv variables">
+      <option name="closed" value="true" />
+      <created>1705559932302</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705559932302</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +123,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial commit: &quot;api&quot; app created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit: &quot;api&quot; app created" />
+    <MESSAGE value="added .gitignore file to hide .venv variables" />
+    <option name="LAST_COMMIT_MESSAGE" value="added .gitignore file to hide .venv variables" />
   </component>
 </project>
