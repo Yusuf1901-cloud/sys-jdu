@@ -9,7 +9,7 @@ class JduUser(models.Model):
     surname = models.CharField(max_length=128)
     phone_num = PhoneNumberField()
     exam_score = models.FloatField()
-    prents_phone_num = PhoneNumberField(blank=True, null=True)
+    parents_phone_num = PhoneNumberField(blank=True, null=True)
     address = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
