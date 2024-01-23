@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9b3571e-22be-46f5-a0f7-12e08ca0fc73" name="Changes" comment="added requirements.txt file">
+    <list default="true" id="e9b3571e-22be-46f5-a0f7-12e08ca0fc73" name="Changes" comment="Added djazzmin admin">
+      <change afterPath="$PROJECT_DIR$/api/migrations/0002_rename_prents_phone_num_jduuser_parents_phone_num_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/migrations/0003_rename_parents_phone_num_jduuser_prents_phone_num.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/migrations/0004_rename_prents_phone_num_jduuser_parents_phone_num.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/migrations/0005_remove_jduuser_parents_phone_num_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/migrations/0006_rename_prents_phone_num_jduuser_parents_phone_num.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +117,9 @@
       <workItem from="1705593764598" duration="1146000" />
       <workItem from="1705594989203" duration="1546000" />
       <workItem from="1705640277262" duration="3562000" />
-      <workItem from="1705645872493" duration="938000" />
+      <workItem from="1705645872493" duration="1009000" />
+      <workItem from="1705996081144" duration="304000" />
+      <workItem from="1706001790738" duration="2863000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit: &quot;api&quot; app created">
       <option name="closed" value="true" />
@@ -154,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705644288309</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added djazzmin admin">
+      <option name="closed" value="true" />
+      <created>1705646878514</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705646878514</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +208,7 @@
     <MESSAGE value="added .gitignore file to hide .idea variables" />
     <MESSAGE value="created User model. TODO ===&gt; register it on admin.py file" />
     <MESSAGE value="added requirements.txt file" />
-    <option name="LAST_COMMIT_MESSAGE" value="added requirements.txt file" />
+    <MESSAGE value="Added djazzmin admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added djazzmin admin" />
   </component>
 </project>

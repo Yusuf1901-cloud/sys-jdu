@@ -69,6 +69,7 @@ def join_student(request):
         surname = row['fam']
         phone_num = parse_phone_number(row['Tel'], region='UZ') if not pd.isnull(row['Tel']) else None
         exam_score = row['Bali']
+        quote = row['Kvota']
         parents_phone_num = parse_phone_number(row['ota-onasi nomer']) if not pd.isnull(
             row['ota-onasi nomer']) else None
         address = row["Uy manzili (to'liq)"] if not pd.isnull("Uy manzili (to'liq)") else None
@@ -76,7 +77,9 @@ def join_student(request):
         # print(jdu_id, password, name, surname, phone_num)
         user_data = {'jdu_id': jdu_id, 'password': password, 'name': name, 'surname': surname,
                      'phone_num': str(phone_num),
-                     "exam_score": exam_score, 'parents_phone_num': str(parents_phone_num), "address": str(address)}
+                     "exam_score": exam_score,
+                     'quote': quote,
+                     'parents_phone_num': str(parents_phone_num), "address": str(address)}
 
         try:
             user, created = JduUser.objects.get_or_create(jdu_id=jdu_id, defaults=user_data)
@@ -97,7 +100,7 @@ def join_student(request):
 class YourView(APIView):
 
     def get(self, request):
-        # join_student(request)  # o'chiriladi
+        join_student(request)  # o'chiriladi
         jdu_users = JduUser.objects.all()
 
         result = {}
@@ -112,6 +115,7 @@ class YourView(APIView):
             parents_phone_num = user.parents_phone_num
             address = user.address
             exam_score = user.exam_score
+            kvota = user.quote
 
             user_data = {
                 'jdu_id': jdu_id,
@@ -120,6 +124,7 @@ class YourView(APIView):
                 'surname': surname,
                 'phone_num': str(phone_num),
                 'exam_score': exam_score,
+                'quote': kvota,
                 'parents_phone_num': str(parents_phone_num),
                 'address': str(address),
             }
@@ -127,7 +132,9 @@ class YourView(APIView):
             # print(jdu_id, password, name, surname, phone_num)
             user_data = {'jdu_id': jdu_id, 'password': password, 'name': name, 'surname': surname,
                          'phone_num': str(phone_num),
-                         "exam_score": exam_score, 'parents_phone_num': str(parents_phone_num), "address": str(address)}
+                         "exam_score": exam_score,
+                         'quote': kvota,
+                         'parents_phone_num': str(parents_phone_num), "address": str(address)}
 
             result[number] = user_data
             number += 1
