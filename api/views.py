@@ -5,8 +5,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import JduUser
 from django.db import IntegrityError
-from django.contrib.auth import authenticate, login
 from rest_framework.permissions import AllowAny
+
+from django.contrib.auth import authenticate, login, logout
+from rest_framework.authtoken.models import Token
 
 
 class LoginView(APIView):
@@ -14,6 +16,7 @@ class LoginView(APIView):
 
     def post(self, request):
         jdu_id = request.data.get('jdu_id')
+
         password = request.data.get('password')
 
         if not jdu_id or not password:
@@ -25,11 +28,34 @@ class LoginView(APIView):
 
         if user is not None:
             login(request, user)
+            token, created = Token.objects.get_or_create(user=user)
+
+            jdu_user_data = {
+                'jdu_id': user.jdu_id,
+                'name': user.name,
+                'surname': user.surname,
+                'phone_num': str(user.phone_num),
+                'exam_score': user.exam_score,
+                'parents_phone_num': str(user.parents_phone_num),
+                'address': str(user.address),
+            }
+
+            response_data = {
+                'token': token.key,
+                'jdu_user_data': jdu_user_data,
+            }
+
             print("Login successful")
-            return Response({'detail': 'Login successful'}, status=status.HTTP_200_OK)
+            return Response(response_data, status=status.HTTP_200_OK)
         else:
             print("Invalid jdu_id or password.")
             return Response({'detail': 'Invalid jdu_id or password.'}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+class LogoutView(APIView):
+    def post(self, request):
+        logout(request)
+        return Response({'detail': 'Logout successful'}, status=status.HTTP_200_OK)
 
 
 def join_student(request):
@@ -71,7 +97,7 @@ def join_student(request):
 class YourView(APIView):
 
     def get(self, request):
-        join_student(request) # o'chiriladi
+        # join_student(request)  # o'chiriladi
         jdu_users = JduUser.objects.all()
 
         result = {}
