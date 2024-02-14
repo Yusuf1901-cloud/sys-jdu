@@ -6,7 +6,7 @@ from rest_framework import status
 from .models import JduUser
 from django.db import IntegrityError
 from rest_framework.permissions import AllowAny
-
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from rest_framework.authtoken.models import Token
 
@@ -83,7 +83,11 @@ def join_student(request):
 
         try:
             user, created = JduUser.objects.get_or_create(jdu_id=jdu_id, defaults=user_data)
-
+            
+            user = User.objects.create_user(username=jdu_id, password=password)
+            user.is_active = True  # Set is_active to True explicitly
+            user.save()
+            
             if not created:
                 # Update existing user data if needed
                 user.name = name
